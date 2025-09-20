@@ -98,7 +98,13 @@ img {
   position: sticky;
   top: 60px;
   overflow-y: auto;
+  display: none; 
 }
+
+.sidebar.show {
+  display: block;
+}
+
 
 .sidebar ul {
   list-style: none;
@@ -277,7 +283,7 @@ body.dark-theme .sign {
 
 /* The slider */
 .slider {
-  --background: #28096b;
+  --background:#3ea6ff;
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -297,16 +303,23 @@ body.dark-theme .sign {
   border-radius: 50%;
   left: 10%;
   bottom: 15%;
-  box-shadow: inset 8px -4px 0px 0px #fff000;
+  box-shadow: inset 8px -4px 0px 0px #ffffff;
   background: var(--background);
   transition: .5s;
 }
 
 input:checked + .slider {
-  background-color: #522ba7;
+  background-color: #000;
 }
 
 input:checked + .slider:before {
   transform: translateX(100%);
-  box-shadow: inset 15px -4px 0px 15px #fff000;
+  box-shadow: inset 15px -4px 0px 15px #fff;
+}
+
+@media (max-width:767px)
+{
+  h1{
+    display: none;
+  }
 }
