@@ -1,23 +1,23 @@
-// ===== Dark Mode Toggle =====
 const themeToggle = document.getElementById("themeToggle");
 
-// Apply saved theme
+// Load saved theme
 if (localStorage.getItem("darkMode") === "enabled") {
   document.body.classList.add("dark-theme");
   themeToggle.checked = true;
 }
 
 themeToggle.addEventListener("change", () => {
-  const isDark = themeToggle.checked;
-  document.body.classList.toggle("dark-theme", isDark);
-  localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+  document.body.classList.toggle("dark-theme");
+
+  if (document.body.classList.contains("dark-theme")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
 });
 
 
-// ===== Sidebar Toggle =====
-const menuToggle = document.getElementById("menu-toggle");
-const sidebar = document.querySelector(".sidebar");
-
-menuToggle.addEventListener("click", () => {
-  sidebar.classList.toggle("show");
-});
+function func()
+{
+  document.querySelector(".sidebar").style.display = "block"
+}
