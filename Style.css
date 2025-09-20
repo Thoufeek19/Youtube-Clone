@@ -1,0 +1,312 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-left .logo img {
+  width: 40px;
+  height: auto;
+}
+
+.nav-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.search-input {
+  width: 50%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+}
+
+.search-button {
+  background-color: #f0f0f0;
+  padding: 8px 12px;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #ccc;
+  margin-left: -1px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sign {
+  background-color: #065fd4;
+  color: white;
+  padding: 6px 14px;
+  border-radius: 18px;
+  font-size: 14px;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 220px;
+  background-color: #f9f9f9;
+  padding: 10px 0;
+  height: 100vh;
+  position: sticky;
+  top: 60px;
+  overflow-y: auto;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover,
+.sidebar li.active {
+  background-color: #e5e5e5;
+}
+
+.sidebar hr {
+  margin: 10px 0;
+  border: 0.5px solid #ccc;
+}
+
+/* Main Layout */
+.main-container {
+  display: flex;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  margin-bottom: 20px;
+}
+
+/* Category Buttons */
+.category-list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.category-button {
+  padding: 6px 12px;
+  background-color: #e5e5e5;
+  border-radius: 18px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  background-color: #d1d1d1;
+}
+
+/* Video Shelf */
+.video-shelf h2 {
+  margin-bottom: 16px;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.video-card:hover {
+  transform: scale(1.02);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.video-info {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.channel-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.video-meta .video-title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.video-meta .video-details {
+  color: #606060;
+  font-size: 13px;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  background-color: #181818;
+  color: #fff;
+}
+
+body.dark-theme .top-nav,
+body.dark-theme .sidebar {
+  background-color: #202020;
+  color: #fff;
+}
+
+body.dark-theme .search-input,
+body.dark-theme .search-button {
+  background-color: #303030;
+  color: #fff;
+  border-color: #444;
+}
+
+body.dark-theme .category-button {
+  background-color: #383838;
+  color: #fff;
+}
+
+body.dark-theme .category-button:hover {
+  background-color: #4a4a4a;
+}
+
+body.dark-theme .video-card {
+  background-color: #242424;
+}
+
+body.dark-theme .video-meta .video-details {
+  color: #aaa;
+}
+
+body.dark-theme .sidebar li:hover,
+body.dark-theme .sidebar li.active {
+  background-color: #383838;
+}
+
+body.dark-theme .sign {
+  background-color: #3ea6ff;
+  color: #000;
+}
+
+
+/* From Uiverse.io by alexruix */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  --background: #28096b;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background);
+  transition: .5s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  background: var(--background);
+  transition: .5s;
+}
+
+input:checked + .slider {
+  background-color: #522ba7;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
